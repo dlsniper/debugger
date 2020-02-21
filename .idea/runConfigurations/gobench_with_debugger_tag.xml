@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="gobench with debugger tag" type="GoTestRunConfiguration" factoryName="GoTestRunConfiguration">
+    <module name="dm" />
+    <working_directory value="$PROJECT_DIR$" />
+    <go_parameters value="-tags=debugger" />
+    <parameters value="-test.count=5" />
+    <framework value="gobench" />
+    <kind value="PACKAGE" />
+    <package value="github.com/dlsniper/dm" />
+    <directory value="$PROJECT_DIR$/" />
+    <filePath value="$PROJECT_DIR$/" />
+    <method v="2" />
+  </configuration>
+</component>
