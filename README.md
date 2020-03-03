@@ -21,6 +21,9 @@ Then, compile the application with `-tags debugger`, e.g.
 go build -tags debugger
 ```
 
+More details on how to use this can be found in this blog post:
+https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/
+
 ### HTTP handlers
 
 In your code, replace the HTTP handler with the `Middleware` function call.
