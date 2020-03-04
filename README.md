@@ -74,113 +74,63 @@ You can asses the performance of this library by running the included benchmarks
 in your environment.
 
 Here are the results from my own machine (Intel Core i7 6700HQ, 32GB RAM, Windows 10),
-when running with a `-count=5` pass.
+when running with a `-count=5` pass, averaged across runs.
 
 Go 1.13.8
 
 Without labels:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithout-8   |  	 3133654|	       366 ns/op|
-|BenchmarkWorkerWithout-8   |  	 3288013|	       373 ns/op|
-|BenchmarkWorkerWithout-8   |  	 3306148|	       376 ns/op|
-|BenchmarkWorkerWithout-8   |  	 3225550|	       371 ns/op|
-|BenchmarkWorkerWithout-8   |  	 3324428|	       366 ns/op|
-
-With a single label:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithOne-8   |  	   25917|	     44604 ns/op|
-|BenchmarkWorkerWithOne-8   |  	   26604|	     45220 ns/op|
-|BenchmarkWorkerWithOne-8   |  	   24740|	     47211 ns/op|
-|BenchmarkWorkerWithOne-8   |  	   26842|	     46196 ns/op|
-|BenchmarkWorkerWithOne-8   |  	   25586|	     45260 ns/op|
-
-With three labels:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithThree-8 |  	   15584|	     76809 ns/op|
-|BenchmarkWorkerWithThree-8 |  	   15769|	     85167 ns/op|
-|BenchmarkWorkerWithThree-8 |  	   15936|	     76244 ns/op|
-|BenchmarkWorkerWithThree-8 |  	   15325|	     76933 ns/op|
-|BenchmarkWorkerWithThree-8 |  	   15666|	     75960 ns/op|
-
-With ten labels:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithTen-8   |  	    6009|	    218503 ns/op|
-|BenchmarkWorkerWithTen-8   |  	    6000|	    211000 ns/op|
-|BenchmarkWorkerWithTen-8   |  	    5714|	    228909 ns/op|
-|BenchmarkWorkerWithTen-8   |  	    5445|	    210107 ns/op|
-|BenchmarkWorkerWithTen-8   |  	    5713|	    215472 ns/op|
-
-With three labels, and an int to string conversion:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithConv-8  |  	   15403|	     77515 ns/op|
-|BenchmarkWorkerWithConv-8  |  	   15055|	     76717 ns/op|
-|BenchmarkWorkerWithConv-8  |  	   15644|	     78752 ns/op|
-|BenchmarkWorkerWithConv-8  |  	   15344|	     85701 ns/op|
-|BenchmarkWorkerWithConv-8  |  	   15423|	     79362 ns/op|
-
-
-Go 1.14 RC 1
-
-Without labels:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithout-8   |  	 3108807|	       366 ns/op|
-|BenchmarkWorkerWithout-8   |  	 3260863|	       372 ns/op|
-|BenchmarkWorkerWithout-8   |  	 3234224|	       365 ns/op|
-|BenchmarkWorkerWithout-8   |  	 3157615|	       372 ns/op|
-|BenchmarkWorkerWithout-8   |  	 3158044|	       366 ns/op|
-
-With a single label:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithOne-8   |  	   25476|	     46004 ns/op|
-|BenchmarkWorkerWithOne-8   |  	   25750|	     46487 ns/op|
-|BenchmarkWorkerWithOne-8   |  	   25104|	     45969 ns/op|
-|BenchmarkWorkerWithOne-8   |  	   26084|	     46772 ns/op|
-|BenchmarkWorkerWithOne-8   |  	   25803|	     47165 ns/op|
-
-With three labels:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithThree-8 |  	   19323|	     60291 ns/op|
-|BenchmarkWorkerWithThree-8 |  	   19606|	     59774 ns/op|
-|BenchmarkWorkerWithThree-8 |  	   19639|	     60339 ns/op|
-|BenchmarkWorkerWithThree-8 |  	   20338|	     59593 ns/op|
-|BenchmarkWorkerWithThree-8 |  	   19866|	     60658 ns/op|
-
-With ten labels:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithTen-8   |  	    7064|	    172565 ns/op|
-|BenchmarkWorkerWithTen-8   |  	    7507|	    169574 ns/op|
-|BenchmarkWorkerWithTen-8   |  	    7504|	    174311 ns/op|
-|BenchmarkWorkerWithTen-8   |  	    7476|	    169342 ns/op|
-|BenchmarkWorkerWithTen-8   |  	    7058|	    173420 ns/op|
-
-With three labels, and an int to string conversion:
-
-| Name | Execution count  | Time |
-|---|---|---|
-|BenchmarkWorkerWithConv-8  |  	   19353|	     64589 ns/op|
-|BenchmarkWorkerWithConv-8  |  	   17340|	     66205 ns/op|
-|BenchmarkWorkerWithConv-8  |  	   19016|	     64314 ns/op|
-|BenchmarkWorkerWithConv-8  |  	   19670|	     61669 ns/op|
-|BenchmarkWorkerWithConv-8  |  	   19866|	     62316 ns/op|
-
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">go 1.13.8</th>
+            <th colspan="2">go 1.14 RC1</th>
+        </tr>
+        <tr>
+            <th>Execution count</th>
+            <th>Time</th>
+            <th>Execution count</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>BenchmarkWorkerWithout-8</td>
+            <td>3255558</td>
+            <td>370 ns/op</td>
+            <td>3183910</td>
+            <td>368 ns/op</td>
+        </tr>
+        <tr>
+            <td>BenchmarkWorkerWithOne-8</td>
+            <td>25938</td>
+            <td>45698 ns/op</td>
+            <td>25643</td>
+            <td>46479 ns/op</td>
+        </tr>
+        <tr>
+            <td>BenchmarkWorkerWithThree-8</td>
+            <td>15656</td>
+            <td>78222 ns/op</td>
+            <td>19754</td>
+            <td>60131 ns/op</td>
+        </tr>
+        <tr>
+            <td>BenchmarkWorkerWithTen-8</td>
+            <td>5776</td>
+            <td>216798 ns/op</td>
+            <td>7322</td>
+            <td>171842 ns/op</td>
+        </tr>
+        <tr>
+            <td>BenchmarkWorkerWithConv-8</td>
+            <td>15374</td>
+            <td>79609 ns/op</td>
+            <td>19049</td>
+            <td>63818 ns/op</td>
+        </tr>
+    </tbody>
+</table>
 
 ## License
 
