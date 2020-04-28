@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/dlsniper/dm"
+	"github.com/dlsniper/debugger"
 )
 
 var result int
